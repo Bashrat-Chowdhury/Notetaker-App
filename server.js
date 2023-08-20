@@ -10,7 +10,9 @@ const app = express();
 // Specified on which port the Express.js server will run
 const PORT = 3001;
 
-// Static middleware pointing to the public folder
+// Middleware added
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
 app.use(express.static("public"));
 
 //route to send inital note taking page for /
