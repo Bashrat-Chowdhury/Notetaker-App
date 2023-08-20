@@ -12,3 +12,18 @@ const PORT = 3001;
 
 // Static middleware pointing to the public folder
 app.use(express.static("public"));
+
+//route to send inital note taking page for /
+app.get("/", (req, res) =>
+  res.sendFile(path.join(__dirname, "public/index.html"))
+);
+
+//route for /notes to send notes page
+app.get("/notes", (req, res) =>
+  res.sendFile(path.join(__dirname, "public/notes.html"))
+);
+
+// listening for incoming connections on the specified port
+app.listen(PORT, () =>
+  console.log(`Example app listening at http://localhost:${PORT}`)
+);
