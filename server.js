@@ -1,9 +1,7 @@
 // Imported Express.js
 const express = require("express");
-const api = require("./routes/index");
-
-// Imported built-in Node.js package 'path'
 const path = require("path");
+const api = require("./routes/index.js");
 
 // Initialized an instance of Express.js
 const app = express();
@@ -14,8 +12,9 @@ const PORT = 3001;
 // Middleware added
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-app.use(express.static("public"));
 app.use("/api", api);
+
+app.use(express.static("public"));
 
 //route to send inital note taking page for /
 app.get("/", (req, res) =>

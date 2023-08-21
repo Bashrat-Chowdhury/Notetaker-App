@@ -1,9 +1,15 @@
 const notes = require("express").Router();
+const { v4: uuidv4 } = require("uuid");
 const {
   readFromFile,
   readAndAppend,
   writeToFile,
 } = require("../helpers/helper.js");
+
+// GET Route for retrieving all saved notes
+notes.get("/", (req, res) => {
+  readFromFile("./db/db.json").then((data) => res.json(JSON.parse(data)));
+});
 
 // POST Route for a new note
 notes.post("/", (req, res) => {
@@ -15,6 +21,7 @@ notes.post("/", (req, res) => {
     const newNote = {
       title,
       text,
+      id: uuidv4(),
     };
 
     readAndAppend(newNote, "./db/db.json");

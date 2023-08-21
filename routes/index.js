@@ -1,6 +1,6 @@
 const express = require("express");
 
-// Import our file containing  routes
+// Import file containing modular routes
 const notesRouter = require("./notes");
 
 // Create and instance of express so we can apply the middleware and routing
