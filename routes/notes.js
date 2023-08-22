@@ -31,4 +31,21 @@ notes.post("/", (req, res) => {
   }
 });
 
+// DELETE Route for a specific note
+notes.delete("/:id", (req, res) => {
+  const Id = req.params.id;
+  readFromFile("./db/db.json")
+    .then((data) => JSON.parse(data))
+    .then((json) => {
+      // new array of all notes except the one with the ID provided in the URL
+      const result = json.filter((note) => note.id !== Id);
+
+      // Saving new array to the filesystem
+      writeToFile("./db/db.json", result);
+
+      // Response to the DELETE request
+      res.json(`Item ${Id} has been deleted`);
+    });
+});
+
 module.exports = notes;
