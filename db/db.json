@@ -1,19 +1,12 @@
 [
     {
-        "title": "Test Title",
-        "text": "Test text"
+        "title": "groceries",
+        "text": "buy oatmeal and blueberries",
+        "id": "09a345c4-cdf0-4658-9ca8-da5176da7d56"
     },
     {
-        "title": "add note title",
-        "text": "add note text"
-    },
-    {
-        "title": "note title added again",
-        "text": "note text added again "
-    },
-    {
-        "title": "okay",
-        "text": "how are you",
-        "id": "bb806272-ad89-4e0a-9bdd-0839d7a1d349"
+        "title": "dentist appointment",
+        "text": "dentist appointment : Monday 10 am",
+        "id": "11f34f38-8579-4d50-832c-526d35120106"
     }
 ]
